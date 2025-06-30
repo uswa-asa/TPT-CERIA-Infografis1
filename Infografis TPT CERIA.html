@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografis TPT Ceria: Cegah TB, Hidup Bahagia!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Batasi lebar maksimum */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Tinggi dasar */
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px; /* Tinggi lebih besar di desktop */
+            }
+        }
+        .kpi-card {
+            background-color: #353A56;
+            color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            text-align: center;
+        }
+        .kpi-number {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1;
+            color: #F8D536;
+        }
+        .flowchart-step {
+            background-color: white;
+            border: 2px solid #D4E9E6;
+            transition: all 0.3s ease;
+        }
+        .flowchart-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            border-color: #089A9C;
+        }
+    </style>
+</head>
+<body class="bg-[#D4E9E6]">
+
+    <header class="bg-[#353A56] text-white p-6 text-center shadow-lg">
+        <h1 class="text-3xl md:text-5xl font-black text-[#F8D536]">TPT Ceria</h1>
+        <p class="text-lg md:text-xl font-semibold mt-2 text-white">Cegah TB, Hidup Bahagia!</p>
+        <p class="text-md text-gray-300 mt-1">Infografis Inovasi Puskesmas untuk Menghentikan Tuberkulosis</p>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        
+        <section id="challenge" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#353A56]">Tantangan Besar di Depan Mata</h2>
+                <p class="mt-2 text-lg text-gray-700">Sebelum inovasi, kami menghadapi dua masalah utama: rendahnya penyelesaian pengobatan TPT dan ancaman TB yang terus berlanjut.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="kpi-card">
+                    <p class="text-xl font-semibold uppercase tracking-wider">Ancaman TB di Indonesia</p>
+                    <p class="kpi-number mt-2">#2</p>
+                    <p class="text-xl font-semibold mt-2">Peringkat Kasus Tertinggi di Dunia</p>
+                    <p class="text-sm text-gray-300 mt-2">Sumber: Laporan TB Global WHO</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center text-[#353A56]">Kepatuhan TPT Regimen Lama (6-9 Bulan)</h3>
+                    <div class="chart-container h-64 md:h-72">
+                        <canvas id="kepatuhanChart"></canvas>
+                    </div>
+                     <p class="text-center text-gray-600 mt-4">Sebagian besar pasien tidak menyelesaikan pengobatan TPT yang panjang, meningkatkan risiko penularan.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#353A56]">Memperkenalkan Solusi "TPT Ceria"</h2>
+                <p class="mt-2 text-lg text-gray-700">Kami mengembangkan program dengan empat pilar inovasi untuk mengatasi tantangan secara komprehensif.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="flowchart-step rounded-lg p-6">
+                    <div class="text-5xl mb-4">🤝</div>
+                    <h3 class="text-xl font-bold text-[#353A56]">Mobilisasi Kader</h3>
+                    <p class="text-gray-600 mt-2">Kader Ceria aktif 'jemput bola', melakukan skrining dan edukasi dari rumah ke rumah.</p>
+                </div>
+                <div class="flowchart-step rounded-lg p-6">
+                    <div class="text-5xl mb-4">🏥</div>
+                    <h3 class="text-xl font-bold text-[#353A56]">Integrasi Layanan</h3>
+                    <p class="text-gray-600 mt-2">Setiap kunjungan (KIA, Poli Umum) menjadi kesempatan skrining TPT.</p>
+                </div>
+                <div class="flowchart-step rounded-lg p-6">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold text-[#353A56]">Dukungan Digital</h3>
+                    <p class="text-gray-600 mt-2">Pengingat via WhatsApp/SMS memastikan pasien tidak lupa minum obat.</p>
+                </div>
+                <div class="flowchart-step rounded-lg p-6">
+                    <div class="text-5xl mb-4">⚡️</div>
+                    <h3 class="text-xl font-bold text-[#353A56]">Rejimen Cepat</h3>
+                    <p class="text-gray-600 mt-2">Memprioritaskan rejimen 1-3 bulan yang lebih nyaman dan efektif.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="impact" class="mb-16">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#353A56]">Dampak Positif yang Nyata</h2>
+                <p class="mt-2 text-lg text-gray-700">Hasil awal program "TPT Ceria" menunjukkan peningkatan signifikan dalam berbagai indikator kunci.</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center text-[#353A56]">Peningkatan Cakupan & Kepatuhan</h3>
+                    <div class="chart-container">
+                        <canvas id="dampakChart"></canvas>
+                    </div>
+                    <p class="text-center text-gray-600 mt-4">Program ini berhasil meningkatkan jangkauan skrining dan angka penyelesaian pengobatan secara drastis.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-center text-[#353A56]">Adopsi Rejimen Pengobatan Baru</h3>
+                    <div class="chart-container">
+                        <canvas id="adopsiChart"></canvas>
+                    </div>
+                     <p class="text-center text-gray-600 mt-4">Pasien kini lebih banyak memilih rejimen TPT jangka pendek yang lebih cepat dan nyaman.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-[#353A56]">Alur Pasien TPT Ceria</h2>
+                <p class="mt-2 text-lg text-gray-700">Beginilah perjalanan mudah seorang individu dalam program kami, dari awal hingga tuntas.</p>
+            </div>
+            <div class="relative">
+                <div class="hidden md:block absolute top-0 left-1/2 w-0.5 h-full bg-[#089A9C]"></div>
+                <div class="relative flex flex-col items-center md:items-start md:flex-row md:justify-between mb-8">
+                    <div class="md:w-5/12 order-1">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h4 class="font-bold text-lg text-[#089A9C]">1. Kontak & Skrining Aktif</h4>
+                            <p class="text-gray-600">Kader Ceria mengunjungi rumah, memberikan edukasi dan melakukan skrining risiko TB.</p>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-[#F8D536] text-[#353A56] rounded-full flex items-center justify-center font-bold text-xl order-2 md:order-none -my-4 md:my-0 z-10">1</div>
+                    <div class="md:w-5/12 order-3"></div>
+                </div>
+                <div class="relative flex flex-col items-center md:items-end md:flex-row md:justify-between mb-8">
+                    <div class="md:w-5/12 order-3 md:order-1"></div>
+                    <div class="w-12 h-12 bg-[#F8D536] text-[#353A56] rounded-full flex items-center justify-center font-bold text-xl order-2 md:order-none -my-4 md:my-0 z-10">2</div>
+                    <div class="md:w-5/12 order-1 md:order-3">
+                         <div class="bg-white rounded-lg shadow-md p-6">
+                            <h4 class="font-bold text-lg text-[#089A9C]">2. Rujukan ke Puskesmas</h4>
+                            <p class="text-gray-600">Individu berisiko dirujuk ke Puskesmas untuk evaluasi medis lebih lanjut oleh dokter.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative flex flex-col items-center md:items-start md:flex-row md:justify-between mb-8">
+                    <div class="md:w-5/12 order-1">
+                        <div class="bg-white rounded-lg shadow-md p-6">
+                            <h4 class="font-bold text-lg text-[#089A9C]">3. Konseling & Pilihan Rejimen</h4>
+                            <p class="text-gray-600">Pasien mendapat konseling dan bebas memilih rejimen TPT jangka pendek yang nyaman.</p>
+                        </div>
+                    </div>
+                    <div class="w-12 h-12 bg-[#F8D536] text-[#353A56] rounded-full flex items-center justify-center font-bold text-xl order-2 md:order-none -my-4 md:my-0 z-10">3</div>
+                    <div class="md:w-5/12 order-3"></div>
+                </div>
+                 <div class="relative flex flex-col items-center md:items-end md:flex-row md:justify-between">
+                    <div class="md:w-5/12 order-3 md:order-1"></div>
+                    <div class="w-12 h-12 bg-[#F8D536] text-[#353A56] rounded-full flex items-center justify-center font-bold text-xl order-2 md:order-none -my-4 md:my-0 z-10">4</div>
+                    <div class="md:w-5/12 order-1 md:order-3">
+                         <div class="bg-white rounded-lg shadow-md p-6">
+                            <h4 class="font-bold text-lg text-[#089A9C]">4. Tuntas & Sehat!</h4>
+                            <p class="text-gray-600">Dengan dukungan digital, pasien berhasil menyelesaikan pengobatan dan kini terlindungi dari TB.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="llm-feature" class="mb-16 bg-white rounded-lg shadow-md p-6">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-[#353A56]">Tanya TPT Ceria ✨: Pencerahan dari AI Kami</h2>
+                <p class="mt-2 text-lg text-gray-700">Punya pertanyaan seputar TPT? Ajukan kepada asisten informasi kesehatan kami di sini!</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <textarea id="tptQuestionInput" class="w-full p-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#089A9C]" rows="4" placeholder="Contoh: Apa itu TPT? Siapa yang perlu TPT? Bagaimana cara kerja TPT?"></textarea>
+                <button id="askTptButton" class="bg-[#089A9C] text-white font-bold py-3 px-6 rounded-lg hover:bg-[#067F81] transition-colors duration-300 shadow-md">
+                    Tanyakan pada TPT Ceria ✨
+                </button>
+                <div id="llmResponseContainer" class="p-4 bg-[#D4E9E6] rounded-lg text-gray-800 hidden">
+                    <p class="font-semibold text-[#353A56] mb-2">Jawaban TPT Ceria ✨:</p>
+                    <div id="llmResponseText" class="text-sm overflow-auto max-h-48"></div>
+                </div>
+                <div id="llmLoadingIndicator" class="text-center text-gray-600 hidden py-4">
+                    Memuat jawaban... ✨
+                </div>
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-[#353A56] text-white p-8 mt-12 text-center">
+        <p class="text-xl font-bold">Dukung Indonesia Bebas TB</p>
+        <p class="mt-2 text-gray-300">Hubungi Puskesmas terdekat untuk informasi lebih lanjut mengenai Terapi Pencegahan Tuberkulosis.</p>
+        <p class="text-sm mt-4 text-[#F8D536]">Program Inovasi Puskesmas TPT Ceria</p>
+    </footer>
+
+    <script>
+        const energeticPlayfulPalette = {
+            yellow: '#F8D536',
+            pink: '#F8A2A4',
+            teal: '#089A9C',
+            lightTeal: '#D4E9E6',
+            darkBlue: '#353A56'
+        };
+
+        const chartTooltipOptions = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        function wrapLabel(str, maxWidth) {
+            if (str.length <= maxWidth) {
+                return str;
+            }
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length > maxWidth) {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                } else {
+                    currentLine += ' ' + words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const kepatuhanData = {
+            labels: ['Putus Berobat', 'Selesai'],
+            datasets: [{
+                label: 'Kepatuhan TPT Regimen Lama',
+                data: [60, 40],
+                backgroundColor: [
+                    energeticPlayfulPalette.pink,
+                    energeticPlayfulPalette.teal
+                ],
+                borderColor: 'white',
+                borderWidth: 2
+            }]
+        };
+        const kepatuhanCtx = document.getElementById('kepatuhanChart').getContext('2d');
+        new Chart(kepatuhanCtx, {
+            type: 'doughnut',
+            data: kepatuhanData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...chartTooltipOptions
+            }
+        });
+
+        const dampakLabels = ['Cakupan Skrining Kontak', 'Tingkat Penyelesaian TPT'].map(label => wrapLabel(label, 16));
+        const dampakData = {
+            labels: dampakLabels,
+            datasets: [
+                {
+                    label: 'Sebelum TPT Ceria',
+                    data: [25, 40],
+                    backgroundColor: energeticPlayfulPalette.pink,
+                    borderColor: energeticPlayfulPalette.pink,
+                    borderWidth: 1
+                },
+                {
+                    label: 'Setelah TPT Ceria',
+                    data: [85, 88],
+                    backgroundColor: energeticPlayfulPalette.teal,
+                    borderColor: energeticPlayfulPalette.teal, /* Fixed typo here */
+                    borderWidth: 1
+                }
+            ]
+        };
+        const dampakCtx = document.getElementById('dampakChart').getContext('2d');
+        new Chart(dampakCtx, {
+            type: 'bar',
+            data: dampakData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%'
+                            }
+                        }
+                    }
+                },
+                ...chartTooltipOptions
+            }
+        });
+        
+        const adopsiData = {
+            labels: ['Regimen Singkat (1-3 Bulan)', 'Regimen Lama (6 Bulan)'],
+            datasets: [{
+                label: 'Adopsi Rejimen',
+                data: [70, 30],
+                backgroundColor: [
+                    energeticPlayfulPalette.teal,
+                    energeticPlayfulPalette.pink
+                ],
+                borderColor: 'white',
+                borderWidth: 2
+            }]
+        };
+        const adopsiCtx = document.getElementById('adopsiChart').getContext('2d');
+        new Chart(adopsiCtx, {
+            type: 'pie',
+            data: adopsiData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...chartTooltipOptions
+            }
+        });
+
+        // Gemini API Integration
+        document.getElementById('askTptButton').addEventListener('click', async () => {
+            const questionInput = document.getElementById('tptQuestionInput');
+            const llmResponseContainer = document.getElementById('llmResponseContainer');
+            const llmResponseText = document.getElementById('llmResponseText');
+            const llmLoadingIndicator = document.getElementById('llmLoadingIndicator');
+
+            const userQuestion = questionInput.value.trim();
+
+            if (!userQuestion) {
+                llmResponseContainer.classList.remove('hidden');
+                llmResponseText.textContent = "Mohon ketik pertanyaan Anda terlebih dahulu.";
+                return;
+            }
+
+            llmResponseContainer.classList.add('hidden');
+            llmLoadingIndicator.classList.remove('hidden');
+            llmResponseText.textContent = ''; // Clear previous response
+
+            try {
+                let chatHistory = [];
+                // Penting: Promt ini memberikan konteks agar LLM menjawab sebagai asisten kesehatan TPT
+                const prompt = `Sebagai asisten informasi kesehatan masyarakat yang fokus pada Terapi Pencegahan Tuberkulosis (TPT), berikan jawaban singkat dan mudah dipahami untuk pertanyaan berikut: ${userQuestion}. Jawaban harus relevan dengan konteks TPT dan kesehatan masyarakat umum, hindari nasihat medis personal.`;
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                // INGAT: Saat di GitHub Pages, Anda harus mengganti ini dengan API Key asli Anda!
+                // Contoh: const apiKey = "AIzaSyCzOxZ7RFOAXI8hFMGS0wFWru9y-8FyvxE";
+                const apiKey = "AIzaSyCzOxZ7RFOAXI8hFMGS0wFWru9y-8FyvxE"; // Dibiarkan kosong agar Canvas otomatis menyediakannya
+
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    llmResponseText.textContent = text;
+                } else {
+                    llmResponseText.textContent = "Maaf, saya tidak dapat menemukan jawaban saat ini. Struktur respons tidak terduga. Mohon coba lagi nanti.";
+                    console.error("Unexpected API response structure:", result);
+                }
+            } catch (error) {
+                console.error("Terjadi kesalahan saat memanggil Gemini API:", error);
+                llmResponseText.textContent = "Terjadi kesalahan koneksi atau internal. Mohon coba lagi.";
+            } finally {
+                llmLoadingIndicator.classList.add('hidden');
+                llmResponseContainer.classList.remove('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>
